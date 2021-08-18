@@ -11,10 +11,7 @@ ARGS=--bibliography $(REFSFILE) --csl $(CSLFILE) --variable=numbersections --var
 .PHONY: all
 all: article
 
-.PHONY: pdf
-pdf:
-	pandoc $(ARGS) --template=pandoc-templates/article.tex $(DOCNAME) -o $(OUTNAME).pdf
-
+.PHONY: article
 article:
 	pandoc --variable=numbersections --template=$(LATEXTEMPLATE) --natbib $(ARGS) $(DOCNAME) -o $(OUTNAME).tex
 	sed -i '' 's/citep{/cite{/g' $(OUTNAME).tex
@@ -23,6 +20,10 @@ article:
 	bibtex $(OUTNAME)
 	pdflatex $(OUTNAME)
 	pdflatex $(OUTNAME)
+
+.PHONY: pdf
+pdf:
+	pandoc $(ARGS) $(DOCNAME) -o $(OUTNAME).pdf
 
 .PHONY: html
 html:
