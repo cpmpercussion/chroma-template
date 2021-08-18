@@ -8,7 +8,7 @@ HTMLTEMPLATE=pandoc-templates/html.template
 ARGS=--bibliography $(REFSFILE) --csl $(CSLFILE) --variable=numbersections --variable=indent --number-sections --citeproc 
 # --filter pandoc-xnos - not working anymore.
 .PHONY: all
-all: article
+all: pdf
 
 .PHONY: article
 article:
@@ -22,7 +22,11 @@ article:
 
 .PHONY: pdf
 pdf:
-	pandoc $(ARGS) $(DOCNAME) -o $(OUTNAME).pdf
+	pandoc $(ARGS) --template=$(LATEXTEMPLATE) $(DOCNAME) -o $(OUTNAME).pdf
+
+.PHONY: tex
+tex:
+	pandoc $(ARGS) --template=$(LATEXTEMPLATE) $(DOCNAME) -o $(OUTNAME).tex
 
 .PHONY: html
 html:
@@ -30,7 +34,9 @@ html:
 
 .PHONY: word
 word:
-	pandoc $(ARGS) $(OUTNAME).tex --reference-doc=$(WORDTEMPLATE) -o $(OUTNAME).docx
+	pandoc $(ARGS) $(OUTNAME).tex -o $(OUTNAME).docx
+
+# --reference-doc=$(WORDTEMPLATE)
 
 .PHONY: clean
 clean:

@@ -21,11 +21,11 @@ abstract: |
 
     Praesent dolor velit, condimentum a placerat non, finibus bibendum eros. Integer vitae vehicula erat, eget commodo massa. Nullam non nibh sed elit tempus efficitur volutpat sit amet nibh.
 bibliography: 'references'
-biblio-style: abbrvurl
 papersize: a4
 classoption: 12pt
 panflute-filters: []
 panflute-path: 'panflute-filters'
+reference-section-title: 'References'
 ---
 
 # Introduction
