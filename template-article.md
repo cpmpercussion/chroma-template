@@ -23,7 +23,7 @@ abstract: |
 bibliography: 'references'
 biblio-style: abbrvurl
 papersize: a4
-classoption: 11pt
+classoption: 12pt
 panflute-filters: []
 panflute-path: 'panflute-filters'
 ---
@@ -36,7 +36,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla efficitur justo v
 
 Sed eu dapibus arcu. Nunc laoreet erat fermentum pharetra suscipit. Suspendisse ut orci at augue volutpat ultricies quis ullamcorper ipsum. Proin semper tellus eget tincidunt pretium. Praesent dolor velit, condimentum a placerat non, finibus bibendum eros. Integer vitae vehicula erat, eget commodo massa. Nullam non nibh sed elit tempus efficitur volutpat sit amet nibh.
 
-Here's a few references to check that everything is working. First article [@Collins:2008fr], second [@Fiebrink:2007cz], third [@Roads:1996ve], and fourth [@Worrall:1999kl].
+## Citations
+
+Citations are supported in markdown and pandoc [@Collins:2008fr]. Some other sources include [@Fiebrink:2007cz], and [@Roads:1996ve]. Complex citations are possible too [e.g., @Worrall:1999kl, pp. 33-35; also @Collins:2008fr, ch. 1].
 
 # Results
 
