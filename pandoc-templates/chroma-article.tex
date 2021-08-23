@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[11pt, a4paper, oneside]{memoir}
 \pagenumbering{arabic}
 \usepackage{amssymb,amsmath}
 \usepackage[utf8]{inputenc}
@@ -49,11 +49,6 @@ $endif$
 
 \setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
 
-% % set default figure placement to htbp
-% \makeatletter
-% \def\fps@figure{htbp}
-% \makeatother
-
 $if(csl-refs)$
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
@@ -84,21 +79,21 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
-$if(author-header)$
-\usepackage{fancyhdr}
-\setlength{\headheight}{15pt}
-\pagestyle{fancy}
-\fancyhead{} % clear all header fields
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[LE]{\emph{$author-header$}}
-\fancyhead[RO]{\emph{$title$}}
-\cfoot{\thepage}
-$endif$
+% $if(author-header)$
+% \usepackage{fancyhdr}
+% \setlength{\headheight}{15pt}
+% \pagestyle{fancy}
+% \fancyhead{} % clear all header fields
+% \fancyhead[LE,RO]{\thepage}
+% \fancyhead[LE]{\emph{$author-header$}}
+% \fancyhead[RO]{\emph{$title$}}
+% \cfoot{\thepage}
+% $endif$
 
 \usepackage{longtable,booktabs,lscape}
 
 $if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+\title{$title$$if(thanks)$\thanks{$thanks$} $endif$ }
 $endif$
 
 $if(subtitle)$
@@ -117,15 +112,57 @@ $if(author)$
 \providecommand{\institute}[1]{}
 \institute{$for(author)$$author.affiliation$$sep$ \and $endfor$}
 $endif$
+
+
 \date{$date$}
 
+%% Memoir Setup
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+%% Memoir Chapter Style
+\makechapterstyle{article}{
+  \captiontitlefont{\small}
+  \counterwithout{section}{chapter}
+  \maxsecnumdepth{subsection} 
+  \setsecnumdepth{subsection}
+  \setaftersecskip{1.7ex}
+  \renewcommand{\abstractname}{}
+}
+
+%% Memoir Page Style
+\makepagestyle{chroma}
+\makeheadrule{chroma}{\textwidth}{\normalrulethickness}
+\makeevenhead{chroma}{\textit{Chroma}}{$title$}{\scshape\thepage}
+\makeoddhead{chroma}{\textit{Chroma}}{$title$}{\scshape\thepage}
+
 \begin{document}
-$if(title)$
-\maketitle
-$endif$
+\chapterstyle{article}
+\thispagestyle{empty}
+
+% manual title block:
+\begin{flushleft}
+\par\vspace*{3em}\LARGE\bfseries{$title$}
+\mdseries\par\vskip 1em
+$for(author)$
+\Large $author.name$\vspace{1.2mm} \newline
+\normalsize\emph{$author.affiliation$} \newline
+\footnotesize \url{$author.email$}\newline 
+$if(author.orcid)$ ORCID: \href{https://orcid.org/$author.orcid$}{$author.orcid$}$endif$\vspace*{5mm}\newline 
+$sep$
+$endfor$
+\normalsize $date$
+\vspace*{5mm}
+\end{flushleft}
+
+% end custom title
+\normalsize
+\pagestyle{chroma}
+
 $if(abstract)$
 \begin{abstract}
-$abstract$
+\vspace*{-1.5cm}\noindent \emph{Abstract:} $abstract$
 \end{abstract}
 $endif$
 
