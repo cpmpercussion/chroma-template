@@ -2,7 +2,10 @@
 \pagenumbering{arabic}
 \usepackage{amssymb,amsmath}
 \usepackage[utf8]{inputenc}
-\usepackage[unicode=true]{hyperref}
+\usepackage[unicode=true]{hyperref} 
+\usepackage{titling} % configure maketitle
+\usepackage{longtable,booktabs,lscape}
+\usepackage[margin=2.5cm]{geometry}
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{
 $if(title-meta)$
@@ -24,7 +27,6 @@ $else$
 $endif$
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-
 \usepackage[margin=2.5cm]{geometry}
 
 $if(natbib)$
@@ -90,7 +92,6 @@ $if(author-header)$
  \cfoot{\thepage}
  $endif$
 
-\usepackage{longtable,booktabs,lscape}
 
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$} $endif$ }
@@ -104,8 +105,15 @@ $endif$
 \renewcommand\and{\\[\baselineskip]}
 
 $if(author)$
-\author{$for(author)$$author.name$\thanks{$author.affiliation$, \texttt{$author.email$}, $if(author.orcid)$ ORCID: \href{https://orcid.org/$author.orcid$}{$author.orcid$}$endif$}$sep$\and $endfor$} 
+\author{$for(author)$$author.name$\thanks{$author.affiliation$, \texttt{$author.email$}, $if(author.orcid)$ ORCID: \href{https://orcid.org/$author.orcid$}{$author.orcid$}$endif$}$sep$\par $endfor$} 
 $endif$
+
+% $if(author)$
+% \author{$for(author)$$author.name$\par
+% $author.affiliation$,\par
+% \texttt{$author.email$}, $if(author.orcid)$\par
+% ORCID: \href{https://orcid.org/$author.orcid$}{$author.orcid$}$endif$$sep$\and $endfor$} 
+% $endif$
 
 
 $if(author)$
@@ -118,15 +126,13 @@ $endif$
 
 \renewcommand{\abstractname}{}
 
-% \makeatletter
-% \renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
-% \begin{flushleft}
-%   \textbf{\@title}
-
-%   \@author
-% \end{flushleft}\egroup
-% }
-% \makeatother
+\pretitle{\begin{flushright}\LARGE\bfseries}
+\posttitle{\end{flushright}}
+\preauthor{\begin{flushleft}\Large}
+\postauthor{\end{flushleft}}
+\predate{\begin{flushleft}}
+\postdate{\end{flushleft}}
+\thanksmarkseries{fnsymbol}
 
 \begin{document}
 

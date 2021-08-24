@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper, oneside]{article}
+\documentclass[11pt, a4paper, oneside]{memoir}
 \pagenumbering{arabic}
 \usepackage{amssymb,amsmath}
 \usepackage[utf8]{inputenc}
@@ -79,17 +79,6 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
-$if(author-header)$
- \usepackage{fancyhdr}
- \setlength{\headheight}{15pt}
- \pagestyle{fancy}
- \fancyhead{} % clear all header fields
- \fancyhead[LE,RO]{\thepage}
- \fancyhead[LE]{\emph{$author-header$}}
- \fancyhead[RO]{\emph{$title$}}
- \cfoot{\thepage}
- $endif$
-
 \usepackage{longtable,booktabs,lscape}
 
 $if(title)$
@@ -101,12 +90,12 @@ $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
 
-\renewcommand\and{\\[\baselineskip]}
-
 $if(author)$
-\author{$for(author)$$author.name$\thanks{$author.affiliation$, \texttt{$author.email$}, $if(author.orcid)$ ORCID: \href{https://orcid.org/$author.orcid$}{$author.orcid$}$endif$}$sep$\and $endfor$} 
-$endif$
-
+\author{$for(author)$$author.name$\thanks{$author.affiliation$,
+    \texttt{$author.email$},
+    $if(author.orcid)$ ORCID:
+    \href{https://orcid.org/$author.orcid$}{$author.orcid$}$endif$}
+  $sep$ \and $endfor$} $endif$
 
 $if(author)$
 \providecommand{\institute}[1]{}
@@ -116,22 +105,29 @@ $endif$
 
 \date{$date$}
 
-\renewcommand{\abstractname}{}
+%% Memoir Setup
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
 
-% \makeatletter
-% \renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
-% \begin{flushleft}
-%   \textbf{\@title}
+%% Memoir Chapter Style
+\makechapterstyle{article}{
+  \captiontitlefont{\small}
+  \counterwithout{section}{chapter}
+  \maxsecnumdepth{subsection} 
+  \setsecnumdepth{subsection}
+  \setaftersecskip{1.7ex}
+  \renewcommand{\abstractname}{}
+}
 
-%   \@author
-% \end{flushleft}\egroup
-% }
-% \makeatother
+%% Memoir Page Style
+\makepagestyle{chroma}
+\makeheadrule{chroma}{\textwidth}{\normalrulethickness}
+\makeevenhead{chroma}{\textit{Chroma}}{$title$}{\scshape\thepage}
+\makeoddhead{chroma}{\textit{Chroma}}{$title$}{\scshape\thepage}
 
 \begin{document}
-
-\maketitle
-
+\chapterstyle{article}
 \thispagestyle{empty}
 
 % manual title block:
@@ -151,11 +147,11 @@ $endfor$
 
 % end custom title
 \normalsize
-\pagestyle{fancy}
+\pagestyle{chroma}
 
 $if(abstract)$
 \begin{abstract}
-\vspace{-1cm}\noindent \emph{Abstract:} $abstract$
+\vspace*{-1.5cm}\noindent \emph{Abstract:} $abstract$
 \end{abstract}
 $endif$
 

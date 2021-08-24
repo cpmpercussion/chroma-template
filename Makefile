@@ -2,7 +2,7 @@ DOCNAME=template-article.md
 OUTNAME=rendered-article
 REFSFILE=references.bib
 CSLFILE=pandoc-templates/apa.csl
-LATEXTEMPLATE=pandoc-templates/chroma-article.tex
+LATEXTEMPLATE=pandoc-templates/chroma-titling.tex
 WORDTEMPLATE=pandoc-templates/custom-reference.docx
 HTMLTEMPLATE=pandoc-templates/html.template
 ARGS=--bibliography $(REFSFILE) --csl $(CSLFILE) --variable=numbersections --variable=indent --number-sections --citeproc 
