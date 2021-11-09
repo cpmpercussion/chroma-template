@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       DOC_NAME: template-article.md
-      OUT_NAME: output/index.html
+      HTML_NAME: output/index.html
+      PDF_NAME: output/article.pdf
       LATEX_TEMPLATE: templates/chroma-article.tex
       DOCX_TEMPLATE: templates/custom-reference.docx
       HTML_TEMPLATE: templates/template.html
@@ -22,7 +23,11 @@ jobs:
           mv media output/
       - uses: docker://pandoc/core
         with:
-          args: --standalone ${{ env.PANDOC_ARGS }} --output=${{ env.OUT_NAME }} ${{ env.DOC_NAME }}
+          args: ${{ env.PANDOC_ARGS }} --template=${{ env.HTML_TEMPLATE }} --output=${{ env.HTML_NAME }} ${{ env.DOC_NAME }}
+          
+      - uses: docker://pandoc/latex
+        with:
+          args: --standalone ${{ env.PANDOC_ARGS }} --template=${{ env.LATEX_TEMPLATE }} --output=${{ env.PDF_NAME }} ${{ env.DOC_NAME }}
                     
       - uses: actions/upload-artifact@master
         with:
