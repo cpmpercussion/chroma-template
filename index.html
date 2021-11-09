@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2021-01-01" />
+  <title>A Sample Chroma Article and Template Instructions</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">A Sample Chroma Article and Template Instructions</h1>
+<p class="author">Victoria Muk</p>
+<p class="author">Devon Frost</p>
+<p class="date">2021-01-01</p>
+</header>
+<h1 data-number="1" id="introduction"><span class="header-section-number">1</span> Introduction</h1>
+<p>This document is the instructions for using the Markdown submission template for Chroma, Journal of the Australasian Computer Music Association and doubles as a sample article. The primary submission format for our journal is <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, a light-weight plain text format for writing documents. The advantage of Markdown over formats such as <code>.docx</code> is that it can be easily and predictably converted to HTML (for viewing on the <a href="https://journal.computermusic.org.au">journal website</a>) or an attractive PDF (for downloading or printing).</p>
+<p>Markdown lets you specify headings, lists, code segments, images, quotations and, of course, divide your text into paragraphs. You don’t get to choose the font or size of text—that is defined by our journal website and the programs that translates the article manuscript into a PDF file. These programs for convertinng the manuscript to HTML and PDF use a tool called <a href="https://pandoc.org">pandoc</a>. You can install pandoc on your system if you like, and convert your article to the standard journal format.</p>
+<p>You don’t need a specific program to edit a Markdown document, they are simply plain text files so you can just use notepad (Windows) or textedit (MacOS). That said, many people like to use a text editor that displays the syntax with nice colours or provides a preview of the rendered document in HTML format. I happen to be editing this document with <a href="https://vscode.dev">VSCode</a>, which can provide a side-by-side HTML preview, or there are online editors such as <a href="https://hackmd.io">HackMD</a> or <a href="https://dillinger.io">Dillinger</a>.</p>
+<figure>
+<img src="media/markdown-editing.png" alt="Editing this Markdown file in VSCode and viewing a preview." /><figcaption aria-hidden="true">Editing this Markdown file in VSCode and viewing a preview.</figcaption>
+</figure>
+<p>You are free to inspect the <a href="https://github.com/cpmpercussion/chroma-template">source code</a> for this template, and if you are setting up another journal or authoring scholarly articles, the templates and this text have been dedicated to the <a href="https://github.com/cpmpercussion/chroma-template/blob/main/LICENSE">public domain with the Unlicense</a>.</p>
+<h2 data-number="1.1" id="isnt-this-all-very-complicated"><span class="header-section-number">1.1</span> Isn’t this all very complicated?</h2>
+<p>At this point, you might be wondering why we bother with all this Markdown nonsense. After all, haven’t journals gotten by with Microsoft Word documents for quite a while now? And what about LaTeX?</p>
+<p>Yes, a typical academic journal accepts articles in Word (<code>.docx</code>) formats, but these journals have production editors to convert accepted manuscripts into PDF print-ready articles and (sometimes) a more accessible web page. These editors are paid with subscription fees paid by universities or with publications fees paid by authors. <em>Chroma</em> is a fully-open access, scholar-run journal, with no subscripton or publication fees so we prefer to use a template that provides nice PDF and web versions of manuscripts without editing.</p>
+<p>Many journals and conferences (particularly in STEM fields) accept articles in LaTeX format which provides a nice PDF output (in fact, pandoc uses LaTeX to build our PDF outputs). This can be a solution for some authors, but many others authors would run a mile rather than learn LaTeX so other solutions are needed.</p>
+<p>There are very few academic journals or conferences with Markdown submission templates, but we think that it is a positive move towards simpler and lower-cost community-led publishing.</p>
+<h1 data-number="2" id="syntax"><span class="header-section-number">2</span> Syntax</h1>
+<p>We cover a brief explanation of the main syntax features below, but more in-depth documentation can be found at <a href="https://commonmark.org/help/">CommonMark</a>.</p>
+<p>You can write section headings in your article by typing <code>#</code>, which corresponds to “Heading 1” in Word or <code>\section{}</code> in LaTeX. Sub-sections can be produced with <code>##</code> and so on.</p>
+<p>You can use produce emphasised text with underscores <code>_italics_</code>, using bold text is possible, but not considered good style.</p>
+<p>You can include inline code with backticks, e.g., <code>`code`</code> produces <code>code</code>. For a longer code block, start and finish it with three backticks (<code>```</code>), e.g.:</p>
+<pre><code>(bind-func sine:DSP
+  (lambda (in time chan dat)
+    (* .1 (cos (* (convert time) .04)))))</code></pre>
+<p>You can include hyperlinks like so: <code>[link text](https://computermusic.org.au)</code>.</p>
+<p>The syntax for including an image is similar but with an exclamation point before the first bracket, e.g.:</p>
+<pre><code>![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)</code></pre>
+<figure>
+<img src="media/synthesisers.jpg" alt="Synthesisers by Charles Martin (Public Domain)" /><figcaption aria-hidden="true">Synthesisers by Charles Martin (Public Domain)</figcaption>
+</figure>
+<p>For images, the text inside the square brackets is interpreted as the figure caption.</p>
+<h1 data-number="3" id="citations"><span class="header-section-number">3</span> Citations</h1>
+<p>Citations are supported in Markdown and pandoc (see documentation <a href="https://pandoc.org/MANUAL.html#citations">here</a>). In this template, the references are listed in <code>references.bib</code> in BibTeX format. Citations look like <code>[@foo]</code> where <code>foo</code> is the id of the BibTeX entry.</p>
+<p>Here’s one example <span class="citation" data-cites="Collins:2008fr">(Collins, 2008)</span>. Some other sources include <span class="citation" data-cites="Fiebrink:2007cz">(Fiebrink et al., 2007)</span>, and <span class="citation" data-cites="Roads:1996ve">(Roads, 1996)</span>. Complex citations are possible too <span class="citation" data-cites="Worrall:1999kl Collins:2008fr">(e.g., Worrall, 1999, pp. 33–35; also Collins, 2008, ch. 1)</span>.</p>
+<p>This template includes a style file, <code>apa.csl</code>, to define the APA style we use in <em>Chroma</em>.</p>
+<h1 data-number="4" id="header-block"><span class="header-section-number">4</span> Header block</h1>
+<p>The strange looking section of text at the start of this file contains the metadata which produces the title, authors, abstract and some other details for your article. It’s in a format called <a href="https://yaml.org">yaml</a> which is supposed to be human-friendly but is sometimes tricky to get right. A minimal article example would have:</p>
+<pre><code>---
+title: &#39;Article Title&#39;
+date: &#39;2021-01-01&#39;
+anonymous: &#39;false&#39;
+author: 
+    - name: Author Name
+      affiliation: Author Affiliation
+      city: City
+      country: Country
+      email: author.name@email.com
+author-header: A. Name (short version of author name)
+abstract: |
+    Article abstract
+bibliography: &#39;references&#39;
+papersize: a4
+classoption: 12pt
+panflute-filters: []
+panflute-path: &#39;panflute-filters&#39;
+reference-section-title: &#39;References&#39;
+---</code></pre>
+<p>This section is set up this way to work with pandoc which expects the YAML metadata to be in this specific format (see the <a href="https://pandoc.org/MANUAL.html#extension-yaml_metadata_block">pandoc manual</a>).</p>
+<p>Some Markdown preview software knows what to do with the YAML metadata, some will ignore it, and some will just print it out as if it is normal text, so if it doesn’t appear correctly in your text editor that may not be a problem.</p>
+<h1 data-number="5" id="conclusions"><span class="header-section-number">5</span> Conclusions</h1>
+<p>Writing articles in Markdown can be a breath of fresh air compared to traditional word processors, but there can be some frustrations in terms of installing special software (e.g., pandoc) and in configuring the templates to create the right kind of outputs.</p>
+<p>Here’s few things we haven’t explained here but might in future:</p>
+<ul>
+<li>lists (just like this one)</li>
+<li>tables</li>
+<li>figure and section references</li>
+<li>including LaTeX maths</li>
+<li>how to convert from docx to markdown</li>
+</ul>
+<p>This is a living document and it is hoped that any authors (such as you!) who try it out might provide feedback (e.g., you could make an <a href="https://github.com/cpmpercussion/chroma-template/issues">issue on the template repository</a>) and help us to improve this template for future authors and potentially other publications.</p>
+<h1 class="unnumbered" id="bibliography">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
+<div id="ref-Collins:2008fr" class="csl-entry" role="doc-biblioentry">
+Collins, K. (2008). <em>Game sound</em>. MIT Press.
+</div>
+<div id="ref-Fiebrink:2007cz" class="csl-entry" role="doc-biblioentry">
+Fiebrink, R., Wang, G., &amp; Cook, P. R. (2007). Don’t forget the laptop: Using native input capabilities for expressive musical control. <em>Proceedings of the International Conference on New Interfaces for Musical Expression</em>, 164–167.
+</div>
+<div id="ref-Roads:1996ve" class="csl-entry" role="doc-biblioentry">
+Roads, C. (1996). Early electronic music instruments: Time line 1899-1950. <em>Computer Music Journal</em>, <em>20</em>(3), 20–23.
+</div>
+<div id="ref-Worrall:1999kl" class="csl-entry" role="doc-biblioentry">
+Worrall, D. (1999). Cyberspace and sound. <em>Proceedings of the Australasian Computer Music Conference</em>.
+</div>
+</div>
+</body>
+</html>
