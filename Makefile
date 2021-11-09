@@ -1,34 +1,34 @@
-DOCNAME=template-article.md
-OUTNAME=rendered-article
-REFSFILE=references.bib
-CSLFILE=templates/apa.csl
-LATEXTEMPLATE=templates/chroma-article.tex
-DOCXTEMPLATE=templates/custom-reference.docx
-HTMLTEMPLATE=templates/template.html
-ARGS=--bibliography $(REFSFILE) --csl $(CSLFILE) --variable=numbersections --variable=indent --number-sections --citeproc 
+DOC_NAME=template-article.md
+OUT_NAME=rendered-article
+REFS_FILE=references.bib
+CSL_FILE=templates/apa.csl
+LATEX_TEMPLATE=templates/chroma-article.tex
+DOCX_TEMPLATE=templates/custom-reference.docx
+HTML_TEMPLATE=templates/template.html
+PANDOC_ARGS=--bibliography $(REFS_FILE) --csl $(CSL_FILE) --variable=numbersections --variable=indent --number-sections --citeproc 
 
 .PHONY: all
 all: pdf
 
 .PHONY: pdf
 pdf:
-	pandoc $(ARGS) --template=$(LATEXTEMPLATE) $(DOCNAME) -o $(OUTNAME).pdf
+	pandoc $(PANDOC_ARGS) --template=$(LATEX_TEMPLATE) $(DOC_NAME) -o $(OUT_NAME).pdf
 
 .PHONY: tex
 tex:
-	pandoc $(ARGS) --template=$(LATEXTEMPLATE) $(DOCNAME) -o $(OUTNAME).tex
+	pandoc $(PANDOC_ARGS) --template=$(LATEX_TEMPLATE) $(DOC_NAME) -o $(OUT_NAME).tex
 
 .PHONY: html
 html:
-	pandoc --self-contained --template=$(HTMLTEMPLATE) $(ARGS) $(DOCNAME) -o $(OUTNAME).html
+	pandoc --self-contained --template=$(HTML_TEMPLATE) $(PANDOC_ARGS) $(DOC_NAME) -o $(OUT_NAME).html
 
 .PHONY: docx
 docx:
-	pandoc $(ARGS) $(DOCNAME) -o $(OUTNAME).docx
+	pandoc $(PANDOC_ARGS) $(DOC_NAME) -o $(OUT_NAME).docx
 
 # --reference-doc=$(WORDTEMPLATE)
 
 .PHONY: clean
 clean:
-	rm -f $(OUTNAME).pdf $(OUTNAME).docx $(OUTNAME).tex $(OUTNAME).html
-	rm -f $(OUTNAME).aux $(OUTNAME).bbl $(OUTNAME).blg $(OUTNAME).log $(OUTNAME).log $(OUTNAME).out $(OUTNAME).tex
+	rm -f $(OUT_NAME).pdf $(OUT_NAME).docx $(OUT_NAME).tex $(OUT_NAME).html
+	rm -f $(OUT_NAME).aux $(OUT_NAME).bbl $(OUT_NAME).blg $(OUT_NAME).log $(OUT_NAME).log $(OUT_NAME).out $(OUT_NAME).tex
