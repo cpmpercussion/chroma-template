@@ -1,0 +1,27 @@
+name: Build and Publish
+
+on: push
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: create output dir
+        run: |
+          mkdir output  # create output dir
+          mv media output/
+      - uses: docker://pandoc/core
+        with:
+          args: --standalone --template=templates/template.html --bibliography references.bib --csl templates/apa.csl --citeproc --variable=numbersections --variable=indent --number-sections --output=output/index.html template-article.md
+                    
+      - uses: actions/upload-artifact@master
+        with:
+          name: output
+          path: output
+          
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
