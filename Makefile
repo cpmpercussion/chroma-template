@@ -1,10 +1,10 @@
 DOCNAME=template-article.md
 OUTNAME=rendered-article
 REFSFILE=references.bib
-CSLFILE=pandoc-templates/apa.csl
-LATEXTEMPLATE=pandoc-templates/chroma-article.tex
-DOCXTEMPLATE=pandoc-templates/custom-reference.docx
-HTMLTEMPLATE=pandoc-templates/template.html
+CSLFILE=templates/apa.csl
+LATEXTEMPLATE=templates/chroma-article.tex
+DOCXTEMPLATE=templates/custom-reference.docx
+HTMLTEMPLATE=templates/template.html
 ARGS=--bibliography $(REFSFILE) --csl $(CSLFILE) --variable=numbersections --variable=indent --number-sections --citeproc 
 
 .PHONY: all

@@ -68,10 +68,10 @@ You can include hyperlinks like so: `[link text](https://computermusic.org.au)`.
 
 The syntax for including an image is similar but with an exclamation point before the first bracket, e.g.: 
 ```
-![Synthesiser by Matrixsynth (Public Domain)](media/synthesiser.jpg)
+![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)
 ```
 
-![Synthesiser by Matrixsynth (Public Domain)](media/synthesiser.jpg)
+![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)
 
 For images, the text inside the square brackets is interpreted as the figure caption. 
 
@@ -115,5 +115,13 @@ Some Markdown preview software knows what to do with the YAML metadata, some wil
 # Conclusions
 
 Writing articles in Markdown can be a breath of fresh air compared to traditional word processors, but there can be some frustrations in terms of installing special software (e.g., pandoc) and in configuring the templates to create the right kind of outputs.
+
+Here's few things we haven't explained here but might in future:
+
+- lists (just like this one)
+- tables
+- figure and section references
+- including LaTeX maths
+- how to convert from docx to markdown
 
 This is a living document and it is hoped that any authors (such as you!) who try it out might provide feedback (e.g., you could make an [issue on the template repository](https://github.com/cpmpercussion/chroma-template/issues)) and help us to improve this template for future authors and potentially other publications.
