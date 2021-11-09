@@ -5,6 +5,14 @@ on: push
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
+    env:
+      DOC_NAME: template-article.md
+      OUT_NAME: output/index.html
+      LATEX_TEMPLATE: templates/chroma-article.tex
+      DOCX_TEMPLATE: templates/custom-reference.docx
+      HTML_TEMPLATE: templates/template.html
+      PANDOC_ARGS: --bibliography references.bib --csl templates/apa.csl --variable=numbersections --variable=indent --number-sections --citeproc 
+
     steps:
       - uses: actions/checkout@v2
 
@@ -14,7 +22,7 @@ jobs:
           mv media output/
       - uses: docker://pandoc/core
         with:
-          args: --standalone --template=templates/template.html --bibliography references.bib --csl templates/apa.csl --citeproc --variable=numbersections --variable=indent --number-sections --output=output/index.html template-article.md
+          args: --standalone ${{ env.PANDOC_ARGS }} --output=${{ env.OUT_NAME }} ${{ env.DOC_NAME }}
                     
       - uses: actions/upload-artifact@master
         with:
