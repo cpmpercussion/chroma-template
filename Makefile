@@ -2,23 +2,13 @@ DOCNAME=template-article.md
 OUTNAME=rendered-article
 REFSFILE=references.bib
 CSLFILE=pandoc-templates/apa.csl
-LATEXTEMPLATE=pandoc-templates/chroma-titling.tex
-WORDTEMPLATE=pandoc-templates/custom-reference.docx
-HTMLTEMPLATE=pandoc-templates/html.template
+LATEXTEMPLATE=pandoc-templates/chroma-article.tex
+DOCXTEMPLATE=pandoc-templates/custom-reference.docx
+HTMLTEMPLATE=pandoc-templates/template.html
 ARGS=--bibliography $(REFSFILE) --csl $(CSLFILE) --variable=numbersections --variable=indent --number-sections --citeproc 
-# --filter pandoc-xnos - not working anymore.
+
 .PHONY: all
 all: pdf
-
-.PHONY: article
-article:
-	pandoc --variable=numbersections --template=$(LATEXTEMPLATE) --natbib $(ARGS) $(DOCNAME) -o $(OUTNAME).tex
-	sed -i '' 's/citep{/cite{/g' $(OUTNAME).tex
-	sed -i '' 's@\\\usepackage{natbib}@@g' $(OUTNAME).tex
-	pdflatex $(OUTNAME)
-	bibtex $(OUTNAME)
-	pdflatex $(OUTNAME)
-	pdflatex $(OUTNAME)
 
 .PHONY: pdf
 pdf:
@@ -32,9 +22,9 @@ tex:
 html:
 	pandoc --self-contained --template=$(HTMLTEMPLATE) $(ARGS) $(DOCNAME) -o $(OUTNAME).html
 
-.PHONY: word
-word:
-	pandoc $(ARGS) $(OUTNAME).tex -o $(OUTNAME).docx
+.PHONY: docx
+docx:
+	pandoc $(ARGS) $(DOCNAME) -o $(OUTNAME).docx
 
 # --reference-doc=$(WORDTEMPLATE)
 
