@@ -20,7 +20,7 @@ jobs:
       - name: create output dir
         run: |
           mkdir output  # create output dir
-          mv media output/
+          cp -a media output/
       - uses: docker://pandoc/core
         with:
           args: ${{ env.PANDOC_ARGS }} --template=${{ env.HTML_TEMPLATE }} --output=${{ env.HTML_NAME }} ${{ env.DOC_NAME }}
