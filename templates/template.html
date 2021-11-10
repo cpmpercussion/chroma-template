@@ -44,7 +44,14 @@ $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
 $for(author)$
-<p class="author">$author.name$</p>
+<p class="author">$author.name$
+$if(author.affiliation)$
+ ($author.affiliation$)
+$endif$
+$if(author.orcid)$
+ (<a href="$author.orcid$">ORCID</a>)
+$endif$
+</p>
 $endfor$
 $if(date)$
 <p class="date">$date$</p>
