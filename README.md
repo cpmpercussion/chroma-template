@@ -60,6 +60,7 @@ If you want to use this template and create HTML and PDF output on your own comp
 
 ## Stretch Goals
 
+- add a reasonable way to include a copyright (and default CC attribution) or citation block on the first page.
 - document a fully-online cloud-based editing workflow for this template
 - fully explain how to install and use the required software for use on your own system
 - automatic compilation of the `.tex`/`.html`/`.docx` versions of the template using a GitHub Action. (done! ✅)
