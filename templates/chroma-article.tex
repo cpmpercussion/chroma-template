@@ -1,7 +1,21 @@
 \documentclass[11pt, a4paper, oneside]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
 \pagenumbering{arabic}
 \usepackage{amssymb,amsmath}
-\usepackage[utf8]{inputenc}
+% Change fonts to Linux Libertine
+\usepackage{libertine}
+\usepackage{libertinus}
+\usepackage[scale=.8]{sourcecodepro}
+\usepackage[T1]{fontenc}
+
+% Change sections to Sans Font
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+
+%\usepackage[sf,pagestyles]{titlesec}
+%\renewcommand*\familydefault{\sfdefault}
+
 \usepackage[unicode=true]{hyperref}
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{
@@ -25,7 +39,11 @@ $endif$
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 
-\usepackage[margin=2.5cm]{geometry}
+
+% Insert Highlighting Macros from Pandoc
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
 
 $if(natbib)$
 \usepackage{natbib}
@@ -84,9 +102,9 @@ $if(author-header)$
  \setlength{\headheight}{15pt}
  \pagestyle{fancy}
  \fancyhead{} % clear all header fields
- \fancyhead[LE,RO]{\thepage}
- \fancyhead[LE]{\emph{$author-header$}}
- \fancyhead[RO]{\emph{$title$}}
+ \fancyhead[LE,RO]{\sffamily \thepage}
+ \fancyhead[LE]{\sffamily \emph{$author-header$}}
+ \fancyhead[RO]{\sffamily \emph{$title$}}
  \cfoot{\thepage}
  $endif$
 
@@ -136,16 +154,16 @@ $endif$
 
 % manual title block:
 \begin{flushleft}
-\par\vspace*{3em}\LARGE\bfseries{$title$}
+\par\vspace*{3em}\LARGE\sffamily\bfseries{$title$}
 \mdseries\par\vskip 1em
 $for(author)$
-\Large $author.name$\vspace{1.2mm} \newline
-\normalsize\emph{$author.affiliation$} \newline
-\footnotesize \url{$author.email$}\newline 
-$if(author.orcid)$ ORCID: \href{https://orcid.org/$author.orcid$}{$author.orcid$}$endif$\vspace*{5mm}\newline 
+\sffamily \Large $author.name$\vspace{1.2mm} \newline
+\rmfamily \normalsize\emph{$author.affiliation$} \newline
+\rmfamily \footnotesize \url{$author.email$}\newline 
+$if(author.orcid)$\rmfamily  ORCID: \href{$author.orcid$}{$author.orcid$}$endif$\vspace*{5mm}\newline 
 $sep$
 $endfor$
-\normalsize $date$
+\sffamily \normalsize $date$
 \vspace*{5mm}
 \end{flushleft}
 
