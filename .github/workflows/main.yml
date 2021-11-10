@@ -21,20 +21,25 @@ jobs:
         run: |
           mkdir output  # create output dir
           cp -a media output/
-      - uses: docker://pandoc/core
+
+      - name: build HTML version
+        uses: docker://pandoc/core
         with:
           args: ${{ env.PANDOC_ARGS }} --template=${{ env.HTML_TEMPLATE }} --output=${{ env.HTML_NAME }} ${{ env.DOC_NAME }}
           
-      - uses: docker://pandoc/latex
+      - name: build PDF version
+        uses: docker://pandoc/latex
         with:
           args: --standalone ${{ env.PANDOC_ARGS }} --template=${{ env.LATEX_TEMPLATE }} --output=${{ env.PDF_NAME }} ${{ env.DOC_NAME }}
                     
-      - uses: actions/upload-artifact@master
+      - name: upload output folder
+        uses: actions/upload-artifact@master
         with:
           name: output
           path: output
           
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: publish output folder to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output
