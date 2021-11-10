@@ -28,7 +28,7 @@ jobs:
           args: ${{ env.PANDOC_ARGS }} --template=${{ env.HTML_TEMPLATE }} --output=${{ env.HTML_NAME }} ${{ env.DOC_NAME }}
           
       - name: build PDF version
-        uses: docker://charlepm/pandoc-latex-libertine:0.1.0
+        uses: docker://charlepm/pandoc-latex-libertine:0.2.0
         with:
           args: --standalone ${{ env.PANDOC_ARGS }} --template=${{ env.LATEX_TEMPLATE }} --output=${{ env.PDF_NAME }} ${{ env.DOC_NAME }}
                     

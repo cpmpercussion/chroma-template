@@ -2,7 +2,7 @@
 # Normal users of the template don't need to worry about this
 DOCKERHUB_USERNAME = charlepm
 CONTAINER_NAME = pandoc-latex-libertine
-CONTAINER_VERSION = 0.1.0
+CONTAINER_VERSION = 0.2.0
 
 build: Dockerfile
 	docker build --tag $(DOCKERHUB_USERNAME)/$(CONTAINER_NAME):$(CONTAINER_VERSION) .
