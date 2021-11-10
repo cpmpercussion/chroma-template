@@ -8,7 +8,7 @@ HTML_TEMPLATE=templates/template.html
 PANDOC_ARGS=--bibliography $(REFS_FILE) --csl $(CSL_FILE) --variable=numbersections --variable=indent --number-sections --citeproc 
 
 .PHONY: all
-all: pdf
+all: pdf html
 
 .PHONY: pdf
 pdf:
