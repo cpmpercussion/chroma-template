@@ -57,12 +57,12 @@ You can write section headings in your article by typing `#`, which corresponds 
 You can use produce emphasised text with underscores `_italics_`, using bold text is possible, but not considered good style.
 
 You can include inline code with backticks, e.g., `` `code` `` produces `code`. For a longer code block, start and finish it with three backticks (`` ``` ``), e.g.:
-
-```
+```scheme
 (bind-func sine:DSP
   (lambda (in time chan dat)
     (* .1 (cos (* (convert time) .04)))))
 ```
+You can type the language name straight after the opening backticks to enable syntax highlighting.
 
 You can include hyperlinks like so: `[link text](https://computermusic.org.au)`.
 
@@ -86,7 +86,7 @@ This template includes a style file, `apa.csl`, to define the APA style we use i
 # Header block
 
 The strange looking section of text at the start of this file contains the metadata which produces the title, authors, abstract and some other details for your article. It's in a format called [yaml](https://yaml.org) which is supposed to be human-friendly but is sometimes tricky to get right. A minimal article example would have:
-```
+```yaml
 ---
 title: 'Article Title'
 date: '2021-01-01'
