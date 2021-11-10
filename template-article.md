@@ -3,19 +3,19 @@ title: 'A Sample Chroma Article and Template Instructions'
 date: '2021-01-01'
 anonymous: 'false'
 author: 
-    - name: Victoria Muk
-      affiliation: Southview University
+    - name: Fake Author
+      affiliation: Fake University
       orcid: https://orcid.org/0000-0000-0000-0000
       city: Coolac
       country: Australia
-      email: vmuk@southview.edu.au
-    - name: Devon Frost
-      affiliation: Frost Studios
+      email: fake.author@fake.edu.au
+    - name: Another Phony
+      affiliation: Phony Studios
       orcid: https://orcid.org/0000-0000-0000-0000
       city: Esperance
       country: Australia
-      email: devon.frost@frostmail.com
-author-header: V. Muk & D. Frost
+      email: aphony@fakemail.com
+author-header: F. Author & A. Phony
 abstract: |
     This document is a sample article manuscript and isntructions for using the Markdown submission template for Chroma, Journal of the Australasian Computer Music Association.
 
