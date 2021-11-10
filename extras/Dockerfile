@@ -3,4 +3,5 @@
 # it's used in the Github Action for building the template automatically
 FROM pandoc/latex:latest
 RUN tlmgr install libertine \
-                  sourcecodepro
+                  sourcecodepro \
+                  ly1
