@@ -268,38 +268,82 @@
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    (<span class="op">*</span> <span class="fl">.1</span> (<span class="kw">cos</span> (<span class="op">*</span> (convert time) <span class="fl">.04</span>)))))</span></code></pre></div>
 <p>You can type the language name straight after the opening backticks to enable syntax highlighting.</p>
 <p>You can include hyperlinks like so: <code>[link text](https://computermusic.org.au)</code>.</p>
+<p>Footnotes are referenced with a caret symbol (<code>[^1]</code>) (see <a href="https://pandoc.org/MANUAL.html#footnotes">pandoc manual</a>) for instance:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Here&#39;s a sentence<span class="ot">[^1]</span>.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>And here&#39;s the footnote.</span></code></pre></div>
+<p>Which looks like this: Here’s a sentence<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<h2 data-number="2.1" id="figures-and-tables"><span class="header-section-number">2.1</span> Figures and Tables</h2>
 <p>The syntax for including an image is similar but with an exclamation point before the first bracket, e.g.:</p>
 <pre><code>![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)</code></pre>
 <figure>
 <img src="media/synthesisers.jpg" alt="Synthesisers by Charles Martin (Public Domain)" /><figcaption aria-hidden="true">Synthesisers by Charles Martin (Public Domain)</figcaption>
 </figure>
 <p>For images, the text inside the square brackets is interpreted as the figure caption.</p>
+<p>Tables follow the markdown table syntax, which uses a lot of <code>|</code> and <code>-</code> symbols. The table caption goes after a <code>:</code> symbol just after the table. This syntax is specific to <a href="https://pandoc.org/MANUAL.html#tables">pandoc</a>.</p>
+<table>
+<caption>A table of musical instrument configurations</caption>
+<thead>
+<tr class="header">
+<th>Instrument</th>
+<th>Keys</th>
+<th>Strings</th>
+<th>Antennae</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Piano</td>
+<td>88</td>
+<td>230</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Guitar</td>
+<td>0</td>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Theremin</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Trumpet</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
 <h1 data-number="3" id="citations"><span class="header-section-number">3</span> Citations</h1>
 <p>Citations are supported in Markdown and pandoc (see documentation <a href="https://pandoc.org/MANUAL.html#citations">here</a>). In this template, the references are listed in <code>references.bib</code> in BibTeX format. Citations look like <code>[@foo]</code> where <code>foo</code> is the id of the BibTeX entry.</p>
 <p>Here’s one example <span class="citation" data-cites="Collins:2008fr">(Collins, 2008)</span>. Some other sources include <span class="citation" data-cites="Fiebrink:2007cz">(Fiebrink et al., 2007)</span>, and <span class="citation" data-cites="Roads:1996ve">(Roads, 1996)</span>. Complex citations are possible too <span class="citation" data-cites="Worrall:1999kl Collins:2008fr">(e.g., Worrall, 1999, pp. 33–35; also Collins, 2008, ch. 1)</span>.</p>
 <p>This template includes a style file, <code>apa.csl</code>, to define the APA style we use in <em>Chroma</em>.</p>
 <h1 data-number="4" id="header-block"><span class="header-section-number">4</span> Header block</h1>
 <p>The strange looking section of text at the start of this file contains the metadata which produces the title, authors, abstract and some other details for your article. It’s in a format called <a href="https://yaml.org">yaml</a> which is supposed to be human-friendly but is sometimes tricky to get right. A minimal article example would have:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;Article Title&#39;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;2021-01-01&#39;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">anonymous</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;false&#39;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Author Name</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> Author Affiliation</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">city</span><span class="kw">:</span><span class="at"> City</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">country</span><span class="kw">:</span><span class="at"> Country</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">email</span><span class="kw">:</span><span class="at"> author.name@email.com</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">author-header</span><span class="kw">:</span><span class="at"> A. Name (short version of author name)</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    Article abstract</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;references&#39;</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">papersize</span><span class="kw">:</span><span class="at"> a4</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">classoption</span><span class="kw">:</span><span class="at"> 12pt</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">panflute-filters</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">panflute-path</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;panflute-filters&#39;</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">reference-section-title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;References&#39;</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;Article Title&#39;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;2021-01-01&#39;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">anonymous</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;false&#39;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Author Name</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> Author Affiliation</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">city</span><span class="kw">:</span><span class="at"> City</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">country</span><span class="kw">:</span><span class="at"> Country</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">email</span><span class="kw">:</span><span class="at"> author.name@email.com</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">author-header</span><span class="kw">:</span><span class="at"> A. Name (short version of author name)</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    Article abstract</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;references&#39;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">papersize</span><span class="kw">:</span><span class="at"> a4</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">classoption</span><span class="kw">:</span><span class="at"> 12pt</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">panflute-filters</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">panflute-path</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;panflute-filters&#39;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">reference-section-title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;References&#39;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>This section is set up this way to work with pandoc which expects the YAML metadata to be in this specific format (see the <a href="https://pandoc.org/MANUAL.html#extension-yaml_metadata_block">pandoc manual</a>).</p>
 <p>Some Markdown preview software knows what to do with the YAML metadata, some will ignore it, and some will just print it out as if it is normal text, so if it doesn’t appear correctly in your text editor that may not be a problem.</p>
 <h1 data-number="5" id="conclusions"><span class="header-section-number">5</span> Conclusions</h1>
@@ -328,5 +372,11 @@ Roads, C. (1996). Early electronic music instruments: Time line 1899-1950. <em>C
 Worrall, D. (1999). Cyberspace and sound. <em>Proceedings of the Australasian Computer Music Conference</em>.
 </div>
 </div>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>And here’s the footnote.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 </body>
 </html>
