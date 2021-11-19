@@ -6,7 +6,7 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     env:
-      DOC_NAME: template-article.md
+      DOC_NAME: article.md
       HTML_NAME: output/index.html
       PDF_NAME: output/article.pdf
       LATEX_TEMPLATE: templates/chroma-article.tex

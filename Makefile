@@ -1,4 +1,4 @@
-DOC_NAME=template-article.md
+DOC_NAME=article.md
 OUT_NAME=rendered-article
 REFS_FILE=references.bib
 CSL_FILE=templates/apa.csl
@@ -27,6 +27,10 @@ docx:
 	pandoc $(PANDOC_ARGS) $(DOC_NAME) -o $(OUT_NAME).docx
 
 # --reference-doc=$(WORDTEMPLATE)
+
+.PHONY: plainpdf
+plainpdf:
+	pandoc $(PANDOC_ARGS) $(DOC_NAME) -o plainpdf.pdf
 
 .PHONY: clean
 clean:

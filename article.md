@@ -125,8 +125,6 @@ abstract: |
 bibliography: 'references'
 papersize: a4
 classoption: 12pt
-panflute-filters: []
-panflute-path: 'panflute-filters'
 reference-section-title: 'References'
 ---
 ```
@@ -141,7 +139,6 @@ Writing articles in Markdown can be a breath of fresh air compared to traditiona
 Here's few things we haven't explained here but might in future:
 
 - lists (just like this one)
-- tables
 - figure and section references
 - including LaTeX maths
 - how to convert from docx to markdown
