@@ -66,6 +66,18 @@ You can type the language name straight after the opening backticks to enable sy
 
 You can include hyperlinks like so: `[link text](https://computermusic.org.au)`.
 
+Footnotes are referenced with a caret symbol (`[^1]`) (see [pandoc manual](https://pandoc.org/MANUAL.html#footnotes)) for instance:
+```markdown
+Here's a sentence[^1].
+
+[^1]: And here's the footnote.
+```
+Which looks like this: Here's a sentence[^1].
+
+[^1]: And here's the footnote.
+
+## Figures and Tables
+
 The syntax for including an image is similar but with an exclamation point before the first bracket, e.g.: 
 ```
 ![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)
@@ -74,6 +86,16 @@ The syntax for including an image is similar but with an exclamation point befor
 ![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)
 
 For images, the text inside the square brackets is interpreted as the figure caption. 
+
+Tables follow the markdown table syntax, which uses a lot of `|` and `-` symbols. The table caption goes after a `:` symbol just after the table. This syntax is specific to [pandoc](https://pandoc.org/MANUAL.html#tables).
+
+| Instrument | Keys | Strings | Antennae |
+|------------|------|---------|----------|
+| Piano      | 88   | 230     | 0        |
+| Guitar     | 0    | 6       | 0        |
+| Theremin   | 0    | 0       | 2        |
+| Trumpet    | 3    | 0       | 0        |
+:A table of musical instrument configurations
 
 # Citations
 
