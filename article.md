@@ -18,7 +18,7 @@ author-header: F. Author & A. Phony
 abstract: |
     This document is a sample article manuscript and isntructions for using the Markdown submission template for Chroma, Journal of the Australasian Computer Music Association.
 
-    It is also dedicated to the public domain using the Unlicense, so you are free to use it in other journals, documents, or any other purpose.
+    It is available under a Creative Commons Zero v1.0 Universal license, so you are free to use it in other journals, documents, or any other purpose.
 bibliography: 'references'
 papersize: a4
 classoption: 12pt
@@ -42,7 +42,7 @@ You don't need a specific program to edit a Markdown document, they are simply p
 
 ![Editing this Markdown file in VSCode and viewing a preview.](media/markdown-editing.png)
 
-You are free to inspect the [source code](https://github.com/cpmpercussion/chroma-template) for this template, and if you are setting up another journal or authoring scholarly articles, the templates and this text have been dedicated to the [public domain with the Unlicense](https://github.com/cpmpercussion/chroma-template/blob/main/LICENSE).
+You are free to inspect the [source code](https://github.com/cpmpercussion/chroma-template) for this template, and if you are setting up another journal or authoring scholarly articles, the templates and this text are licensed under a [Creative Commons Zero v1.0 Universal](https://github.com/cpmpercussion/chroma-template/blob/main/LICENSE) license.
 
 ## Isn't this all very complicated?
 
