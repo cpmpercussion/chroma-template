@@ -76,6 +76,8 @@ Which looks like this: Here's a sentence[^1].
 
 [^1]: And here's the footnote.
 
+Numbered and un-numbered lists are very easy, just use `-` to indicate unnumered list items, and numbers, e.g., `1.` to indicate numbered list items.
+
 ## Figures and Tables
 
 The syntax for including an image is similar but with an exclamation point before the first bracket, e.g.: 
