@@ -1,11 +1,11 @@
 # Journal Article Template in Markdown
 
 [![Build and Publish](https://github.com/cpmpercussion/chroma-template/actions/workflows/main.yml/badge.svg)](https://github.com/cpmpercussion/chroma-template/actions/workflows/main.yml)
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
 This is a journal article template for authoring articles with [Markdown](https://en.wikipedia.org/wiki/Markdown). Have a look at the [HTML](https://cpmpercussion.github.io/chroma-template/) and [PDF](https://cpmpercussion.github.io/chroma-template/article.pdf) output.
 
-Although specifically designed for [Chroma: Journal of the Australasian Music Association](https://computermusic.org.au/journal/), it is [Unlicensed](https://unlicense.org) and free to use for any other purpose and may be modified to suit your needs.
+Although specifically designed for [Chroma: Journal of the Australasian Music Association](https://computermusic.org.au/journal/), it is licensd under [Creative Commons Zero v1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/) and free to use for any other purpose and may be modified to suit your needs.
 
 The template, `article.md`, doubles as instructions for using Markdown for authoring an academic article. You can find a short usage guide below. By default, this template looks for a BibTeX database of references in `references.bib`.
 
