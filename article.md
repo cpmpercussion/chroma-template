@@ -86,14 +86,12 @@ Numbered and un-numbered lists are very easy, just use `-` to indicate unnumered
 
 ## Figures and Tables
 
-The syntax for including an image is similar but with an exclamation point before the first bracket, e.g.: 
+The syntax for including an image is similar to a link but with an exclamation point before the first bracket. The text inside the square brackets is interpreted as the figure caption. For example:
 ```
 ![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)
 ```
 
 ![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)
-
-For images, the text inside the square brackets is interpreted as the figure caption. 
 
 Tables follow the markdown table syntax, which uses a lot of `|` and `-` symbols. The table caption goes after a `:` symbol just after the table. This syntax is specific to [pandoc](https://pandoc.org/MANUAL.html#tables).
 
@@ -103,7 +101,7 @@ Tables follow the markdown table syntax, which uses a lot of `|` and `-` symbols
 | Guitar     | 0    | 6       | 0        |
 | Theremin   | 0    | 0       | 2        |
 | Trumpet    | 3    | 0       | 0        |
-:A table of musical instrument configurations
+Table: A table of musical instrument configurations
 
 The LaTeX template for that generates the PDF files tends to "float" figures and tables, so they may not end up _precisely_ where put in text. It's usually better just to let this happen and not try to override it.
 
