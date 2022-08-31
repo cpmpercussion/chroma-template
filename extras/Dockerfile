@@ -7,4 +7,5 @@ RUN tlmgr install libertine \
                   sourcecodepro \
                   ly1 \
                   sectsty \
-                  lastpage
+                  lastpage \
+                  hanging
