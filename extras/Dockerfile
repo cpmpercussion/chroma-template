@@ -6,4 +6,5 @@ FROM pandoc/latex:latest
 RUN tlmgr install libertine \
                   sourcecodepro \
                   ly1 \
-                  sectsty
+                  sectsty \
+                  lastpage
