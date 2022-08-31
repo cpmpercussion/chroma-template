@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="dcterms.date" content="2021-01-01" />
   <title>A Sample Chroma Article and Template Instructions</title>
   <style>
     html {
@@ -268,8 +267,15 @@
  (Phony Studios)
  (<a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>)
 </p>
-<p class="date">2021-01-01</p>
+<p class="date">Submitted: YYYY-MM-DD</p>
 </header>
+<p class="abstract"><em>Abstract:</em> <p>This document is a sample
+article manuscript and isntructions for using the Markdown submission
+template for Chroma, Journal of the Australasian Computer Music
+Association.</p>
+<p>It is also dedicated to the public domain using the Unlicense, so you
+are free to use it in other journals, documents, or any other
+purpose.</p></p>
 <h1 data-number="1" id="introduction"><span
 class="header-section-number">1</span> Introduction</h1>
 <p>This document is the instructions for using the Markdown submission
@@ -373,8 +379,9 @@ to indicate unnumered list items, and numbers, e.g., <code>1.</code> to
 indicate numbered list items.</p>
 <h2 data-number="2.1" id="figures-and-tables"><span
 class="header-section-number">2.1</span> Figures and Tables</h2>
-<p>The syntax for including an image is similar but with an exclamation
-point before the first bracket, e.g.:</p>
+<p>The syntax for including an image is similar to a link but with an
+exclamation point before the first bracket. The text inside the square
+brackets is interpreted as the figure caption. For example:</p>
 <pre><code>![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)</code></pre>
 <figure>
 <img src="media/synthesisers.jpg"
@@ -382,8 +389,6 @@ alt="Synthesisers by Charles Martin (Public Domain)" />
 <figcaption aria-hidden="true">Synthesisers by Charles Martin (Public
 Domain)</figcaption>
 </figure>
-<p>For images, the text inside the square brackets is interpreted as the
-figure caption.</p>
 <p>Tables follow the markdown table syntax, which uses a lot of
 <code>|</code> and <code>-</code> symbols. The table caption goes after
 a <code>:</code> symbol just after the table. This syntax is specific to
@@ -425,6 +430,10 @@ a <code>:</code> symbol just after the table. This syntax is specific to
 </tr>
 </tbody>
 </table>
+<p>The LaTeX template for that generates the PDF files tends to “float”
+figures and tables, so they may not end up <em>precisely</em> where put
+in text. It’s usually better just to let this happen and not try to
+override it.</p>
 <h1 data-number="3" id="citations"><span
 class="header-section-number">3</span> Citations</h1>
 <p>Citations are supported in Markdown and pandoc (see documentation <a
@@ -442,6 +451,26 @@ data-cites="Worrall:1999kl Collins:2008fr">(e.g., Worrall, 1999, pp.
 33–35; also Collins, 2008, ch. 1)</span>.</p>
 <p>This template includes a style file, <code>apa.csl</code>, to define
 the APA style we use in <em>Chroma</em>.</p>
+<p>You can also just type citations manually into the markdown file, and
+if the manuscript has been received as a Word document and converted to
+markdown, the references will be manually entered. In this case, add a
+section (<code># References</code>) at the end of the document with the
+references after that. It’s a good idea to add a <em>little</em> bit of
+manual LaTeX code to make the references look right with hanging
+indents:</p>
+<pre><code># References
+
+```{=latex}
+\begin{hangparas}{1.5em}{1}
+```
+
+Worrall, D. (1999). Cyberspace and sound. Proceedings of the Australasian Computer Music Conference.
+
+(other references)
+
+```{=latex}
+\end{hangparas}
+```</code></pre>
 <h1 data-number="4" id="header-block"><span
 class="header-section-number">4</span> Header block</h1>
 <p>The strange looking section of text at the start of this file
@@ -450,25 +479,25 @@ some other details for your article. It’s in a format called <a
 href="https://yaml.org">yaml</a> which is supposed to be human-friendly
 but is sometimes tricky to get right. A minimal article example would
 have:</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;Article Title&#39;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;2021-01-01&#39;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">anonymous</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;false&#39;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Author Name</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> Author Affiliation</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">city</span><span class="kw">:</span><span class="at"> City</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">country</span><span class="kw">:</span><span class="at"> Country</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">email</span><span class="kw">:</span><span class="at"> author.name@email.com</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">author-header</span><span class="kw">:</span><span class="at"> A. Name (short version of author name)</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    Article abstract</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;references&#39;</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">papersize</span><span class="kw">:</span><span class="at"> a4</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">classoption</span><span class="kw">:</span><span class="at"> 12pt</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">reference-section-title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;References&#39;</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;Article Title&#39;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;2021-01-01&#39;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">anonymous</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;false&#39;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Author Name</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> Author Affiliation</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">city</span><span class="kw">:</span><span class="at"> City</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">country</span><span class="kw">:</span><span class="at"> Country</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">email</span><span class="kw">:</span><span class="at"> author.name@email.com</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">author-header</span><span class="kw">:</span><span class="at"> A. Name (short version of author name)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    Article abstract</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;references&#39;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">papersize</span><span class="kw">:</span><span class="at"> a4</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">classoption</span><span class="kw">:</span><span class="at"> 12pt</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">reference-section-title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;References&#39;</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>This section is set up this way to work with pandoc which expects the
 YAML metadata to be in this specific format (see the <a
 href="https://pandoc.org/MANUAL.html#extension-yaml_metadata_block">pandoc
