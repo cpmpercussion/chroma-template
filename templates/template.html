@@ -54,7 +54,7 @@ $endif$
 </p>
 $endfor$
 $if(date)$
-<p class="date">$date$</p>
+<p class="date">Submitted: $date$</p>
 $endif$
 </header>
 $endif$
@@ -65,6 +65,9 @@ $if(toc-title)$
 $endif$
 $table-of-contents$
 </nav>
+$endif$
+$if(abstract)$
+<p class="abstract"><em>Abstract:</em> $abstract$</p>
 $endif$
 $body$
 $for(include-after)$

@@ -1,6 +1,5 @@
 ---
 title: 'A Sample Chroma Article and Template Instructions'
-date: '2021-01-01'
 anonymous: 'false'
 author: 
     - name: Fake Author
@@ -24,6 +23,13 @@ bibliography: 'references'
 papersize: a4
 classoption: 12pt
 reference-section-title: 'References'
+year: YYYY
+volume: XX
+number: X
+article-no: X
+date: 'YYYY-MM-DD'
+accepted-date: 'YYYY-MM-DD'
+published-date: 'YYYY-MM-DD'
 ---
 
 # Introduction
@@ -99,6 +105,8 @@ Tables follow the markdown table syntax, which uses a lot of `|` and `-` symbols
 | Trumpet    | 3    | 0       | 0        |
 :A table of musical instrument configurations
 
+The LaTeX template for that generates the PDF files tends to "float" figures and tables, so they may not end up _precisely_ where put in text. It's usually better just to let this happen and not try to override it.
+
 # Citations
 
 Citations are supported in Markdown and pandoc (see documentation [here](https://pandoc.org/MANUAL.html#citations)).  In this template, the references are listed in `references.bib` in BibTeX format. Citations look like `[@foo]` where `foo` is the id of the BibTeX entry.
@@ -107,9 +115,28 @@ Here's one example [@Collins:2008fr]. Some other sources include [@Fiebrink:2007
 
 This template includes a style file, `apa.csl`, to define the APA style we use in _Chroma_.
 
+You can also just type citations manually into the markdown file, and if the manuscript has been received as a Word document and converted to markdown, the references will be manually entered. In this case, add a section (`# References`) at the end of the document with the references after that. It's a good idea to add a _little_ bit of manual LaTeX code to make the references look right with hanging indents:
+
+    # References
+    
+    ```{=latex}
+    \begin{hangparas}{1.5em}{1}
+    ```
+    
+    Worrall, D. (1999). Cyberspace and sound. Proceedings of the Australasian Computer Music Conference.
+    
+    (other references)
+    
+    ```{=latex}
+    \end{hangparas}
+    ```
+
+
+
 # Header block
 
 The strange looking section of text at the start of this file contains the metadata which produces the title, authors, abstract and some other details for your article. It's in a format called [yaml](https://yaml.org) which is supposed to be human-friendly but is sometimes tricky to get right. A minimal article example would have:
+
 ```yaml
 ---
 title: 'Article Title'
