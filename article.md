@@ -16,7 +16,7 @@ author:
       email: aphony@fakemail.com
 author-header: F. Author & A. Phony
 abstract: |
-    This document is a sample article manuscript and isntructions for using the Markdown submission template for Chroma, Journal of the Australasian Computer Music Association.
+    This document is a sample article manuscript and instructions for using the Markdown submission template for Chroma, Journal of the Australasian Computer Music Association.
 
     It is available under a Creative Commons Zero v1.0 Universal license, so you are free to use it in other journals, documents, or any other purpose.
 bibliography: 'references'
