@@ -12,6 +12,7 @@ jobs:
       LATEX_TEMPLATE: templates/chroma-article.tex
       DOCX_TEMPLATE: templates/custom-reference.docx
       HTML_TEMPLATE: templates/template.html
+      HTML_CSS: templates/pandoc.css
       PANDOC_ARGS: --bibliography references.bib --csl templates/apa.csl --variable=numbersections --variable=indent --number-sections --citeproc 
 
     steps:
@@ -25,7 +26,7 @@ jobs:
       - name: build HTML version
         uses: docker://pandoc/core
         with:
-          args: ${{ env.PANDOC_ARGS }} --template=${{ env.HTML_TEMPLATE }} --output=${{ env.HTML_NAME }} ${{ env.DOC_NAME }}
+          args: ${{ env.PANDOC_ARGS }} --template=${{ env.HTML_TEMPLATE }} --output=${{ env.HTML_NAME }} ${{ env.DOC_NAME }} --css ${{ env.HTML_CSS }}
           
       - name: build PDF version
         uses: docker://charlepm/pandoc-latex-libertine:0.3.0
