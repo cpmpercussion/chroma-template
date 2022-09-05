@@ -137,7 +137,7 @@ You can also just type citations manually into the markdown file, and if the man
 
 The strange looking section of text at the start of this file contains the metadata which produces the title, authors, abstract and some other details for your article. It's in a format called [yaml](https://yaml.org) which is supposed to be human-friendly but is sometimes tricky to get right. A minimal article example would have:
 
-```yaml
+```{caption="The header block for this template" .yaml}
 ---
 title: 'Article Title'
 author: 
