@@ -37,3 +37,8 @@ plainpdf:
 clean:
 	rm -f $(OUT_NAME).pdf $(OUT_NAME).docx $(OUT_NAME).tex $(OUT_NAME).html
 	rm -f $(OUT_NAME).aux $(OUT_NAME).bbl $(OUT_NAME).blg $(OUT_NAME).log $(OUT_NAME).log $(OUT_NAME).out $(OUT_NAME).tex $(OUT_NAME).synctex.gz
+
+.PHONY: convert-word
+convert-word:
+	pandoc -i manuscript.docx -o word-manuscript.md --extract-media .
+
