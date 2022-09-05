@@ -1,6 +1,5 @@
 ---
 title: 'A Sample Chroma Article and Template Instructions'
-anonymous: 'false'
 author: 
     - name: Fake Author
       affiliation: Fake University
@@ -19,6 +18,7 @@ abstract: |
     This document is a sample article manuscript and instructions for using the Markdown submission template for Chroma, Journal of the Australasian Computer Music Association.
 
     It is available under a Creative Commons Zero v1.0 Universal license, so you are free to use it in other journals, documents, or any other purpose.
+anonymous: 'false'
 bibliography: 'references'
 papersize: a4
 classoption: 12pt
@@ -140,8 +140,6 @@ The strange looking section of text at the start of this file contains the metad
 ```yaml
 ---
 title: 'Article Title'
-date: '2021-01-01'
-anonymous: 'false'
 author: 
     - name: Author Name
       affiliation: Author Affiliation
@@ -151,12 +149,21 @@ author:
 author-header: A. Name (short version of author name)
 abstract: |
     Article abstract
+anonymous: 'false'
 bibliography: 'references'
 papersize: a4
 classoption: 12pt
 reference-section-title: 'References'
+year: YYYY
+volume: XX
+number: X
+article-no: X
+date: 'YYYY-MM-DD'
+accepted-date: 'YYYY-MM-DD'
+published-date: 'YYYY-MM-DD'
 ---
 ```
+
 This section is set up this way to work with pandoc which expects the YAML metadata to be in this specific format (see the [pandoc manual](https://pandoc.org/MANUAL.html#extension-yaml_metadata_block)).
 
 Some Markdown preview software knows what to do with the YAML metadata, some will ignore it, and some will just print it out as if it is normal text, so if it doesn't appear correctly in your text editor that may not be a problem.
