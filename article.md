@@ -63,11 +63,13 @@ You can write section headings in your article by typing `#`, which corresponds 
 You can use produce emphasised text with underscores `_italics_`, using bold text is possible, but not considered good style.
 
 You can include inline code with backticks, e.g., `` `code` `` produces `code`. For a longer code block, start and finish it with three backticks (`` ``` ``), e.g.:
-```scheme
+
+```{caption="Here's a caption for the code snippet" .scheme} 
 (bind-func sine:DSP
   (lambda (in time chan dat)
     (* .1 (cos (* (convert time) .04)))))
 ```
+
 You can type the language name straight after the opening backticks to enable syntax highlighting.
 
 You can include hyperlinks like so: `[link text](https://computermusic.org.au)`.
