@@ -224,18 +224,30 @@ figcaption {
   margin: 0 0 .8em;
 }
 
-.body {
+/* captions */
+
+body {
 	counter-reset: figures;
+  counter-reset: tables;
 }
 
-.figure {
+figure {
   counter-increment: figures;
 }
 
-.figure figcaption:before {
+figure figcaption:before {
   content: 'Figure ' counter(figures) ': ';
 }
 
+table {
+  counter-increment: tables;
+}
+
+table caption:before {
+  content: 'Table ' counter(tables) ': ';
+}
+
+/* endcaptions */
 
 table {
   margin-bottom: 2em;
@@ -257,6 +269,12 @@ table td {
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
   vertical-align: top;
+}
+
+table caption {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0 0 .8em;
 }
 
 .author {
