@@ -22,6 +22,7 @@ anonymous: 'false'
 bibliography: 'references'
 papersize: a4
 classoption: 12pt
+secnumdepth: 3
 reference-section-title: 'References'
 year: YYYY
 volume: XX
