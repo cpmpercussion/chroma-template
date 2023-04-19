@@ -21,7 +21,7 @@ tex:
 
 .PHONY: html
 html:
-	pandoc --self-contained --template=$(HTML_TEMPLATE) $(PANDOC_ARGS) $(DOC_NAME) -o $(OUT_NAME).html --css $(HTML_CSS)
+	pandoc --embed-resources --standalone --template=$(HTML_TEMPLATE) $(PANDOC_ARGS) $(DOC_NAME) -o $(OUT_NAME).html --css $(HTML_CSS)
 
 .PHONY: docx
 docx:

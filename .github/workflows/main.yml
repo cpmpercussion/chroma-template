@@ -4,7 +4,7 @@ on: push
 
 jobs:
   convert_via_pandoc:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     env:
       DOC_NAME: article.md
       HTML_NAME: output/index.html
